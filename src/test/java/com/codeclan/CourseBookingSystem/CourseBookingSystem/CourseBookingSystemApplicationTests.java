@@ -31,5 +31,21 @@ public class CourseBookingSystemApplicationTests {
 		assertEquals(1, courseRepository.getCoursesByStarRating(3).size());
 	}
 
+	@Test
+	public void getBookingsByDate(){
+		assertEquals(3, bookingRepository.getBookingsByDate("30-02-2100").size());
+		assertEquals(0, bookingRepository.getBookingsByDate("29-02-2100").size());
+	}
+
+	@Test
+	public void getCustomersByCourse(){
+		assertEquals(2, customerRepository.getAllCustomersByCourse(1L).size());
+	}
+
+	@Test
+	public void getCoursesByCustomer(){
+		assertEquals(2, courseRepository.getAllCoursesByCustomer(1L).size());
+	}
+
 }
 
