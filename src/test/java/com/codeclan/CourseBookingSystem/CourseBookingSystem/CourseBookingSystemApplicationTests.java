@@ -47,5 +47,16 @@ public class CourseBookingSystemApplicationTests {
 		assertEquals(2, courseRepository.getAllCoursesByCustomer(1L).size());
 	}
 
+	@Test
+	public void getCustomersByCourseAndTown(){
+		assertEquals(1, customerRepository.getAllCustomersByTownAndCourse("Bonnyrigg", 1L).size());
+	}
+
+	@Test
+	public void getCustomersOverAgeByCourseAndTown(){
+		assertEquals(0, customerRepository.getAllCustomersOverAgeByTownAndBYCourse(27, "Bonnyrigg", 1L).size());
+		assertEquals(1, customerRepository.getAllCustomersOverAgeByTownAndBYCourse(25, "Bonnyrigg", 1L).size());
+	}
+
 }
 
