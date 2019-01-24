@@ -30,7 +30,7 @@ public class Customer {
 
     public Customer(String name, String town, int age) {
         this.name = name;
-        this.town = town;
+        this.town = town.toLowerCase();
         this.age = age;
         this.bookings = new ArrayList<>();
     }

@@ -25,11 +25,11 @@ public class CustomerController {
 
     @GetMapping("/town/{town}/course/{id}")
     public  List<Customer> getAllCustomersByTownAndCourse(@PathVariable String town, @PathVariable Long id){
-        return customerRepository.getAllCustomersByTownAndCourse(town, id);
+        return customerRepository.getAllCustomersByTownAndCourse(town.toLowerCase(), id);
     }
 
     @GetMapping("/aboveage/{age}/town/{town}/course/{id}")
     public  List<Customer> getAllCustomersAboveAgeByTownAndCourse(@PathVariable int age, @PathVariable String town, @PathVariable Long id){
-        return customerRepository.getAllCustomersOverAgeByTownAndBYCourse(age, town, id);
+        return customerRepository.getAllCustomersOverAgeByTownAndBYCourse(age, town.toLowerCase(), id);
     }
 }
